@@ -2,7 +2,7 @@ package jobsheet6;
 
 public class DoWhileLoop {
     public static void main(String[] args) {
-        int x=1;
+        int x=2;
         do {
             System.out.println(x);
             x++;
