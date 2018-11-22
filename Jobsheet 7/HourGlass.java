@@ -11,6 +11,7 @@ public class HourGlass {
         System.out.print("Masukkan jumlah angka : ");
         int input = sc.nextInt();
         int Asterisk = (input * 2) - 1;
+        
 
         for (int Tinggi = 0; Tinggi < input; Tinggi++) {
             for (int Space = Tinggi; Space > 0; Space--) {

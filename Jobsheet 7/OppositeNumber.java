@@ -2,7 +2,7 @@
 
 public class OppositeNumber {
     public static void main(String[] args) {
-        int n = 3;
+        int n = 5;
         
         for (int Tinggi = 1; Tinggi <= n; Tinggi++) {
             if (Tinggi%2!=0) {

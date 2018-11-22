@@ -1,7 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class ForLooping{
     public static void main(String[] args) {
         Random random = new Random();
