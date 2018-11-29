@@ -13,22 +13,20 @@ import java.util.Scanner;
 */
 //file ini hanya berisi perintah2 saja. untuk output print diletakkan di file terpisah
 public class Tilang {
+    public static void print(String a){
+        System.out.println(a);
+    }
     public static int SIM, BawaSIM, PlatNomor, PartMotor, PartMobil, SerepMobil;
-        public static int LaluLintas, SpeedLimit, STNK, Sabuk, Helm, LampuMalam, LampuMotorSiang, MenggokRaRiting;
-        public static int Total, Menu;
-        public static int A = 0, B = 0, C = 0, D = 0, E = 0, F = 0, G = 0, H = 0, I = 0, J = 0, K = 0,L = 0;
-        public static String Nopol, Nama;
-        public static int Denda0 = 0;
-        public static int Denda1 = 100000;
-        public static int Denda2 = 250000;
-        public static int Denda3 = 500000;
-        public static int Denda4 = 1000000;
-        public static char pilihan1; 
+    public static int LaluLintas, SpeedLimit, STNK, Sabuk, Helm, LampuMalam;
+    public static int LampuMotorSiang, MenggokRaRiting;
+    public static int Menu;
+    public static String Nopol, Nama, print;
+    public static int [] Denda = {0,100000,250000,500000,1000000};
+    public static int [] Total = new int[10];
         
-        public static Scanner inputString = new Scanner(System.in);
-        public static Scanner inputInt = new Scanner(System.in);
-        public static Tilang Tilang1 = new Tilang();
-        public static Source Source1 = new Source();
+    public static Scanner inputString = new Scanner(System.in);
+    public static Scanner inputInt = new Scanner(System.in);
+    public static Source Source1 = new Source();
     
         
         
@@ -92,251 +90,171 @@ public class Tilang {
         BawaSIM = inputInt.nextInt();
         if (SIM==1){
             if (BawaSIM==1){
-                A = 0;
+                Total[0] = Denda[0];
             }else{
-                A = Denda1;
+                Total[0] = Denda[1];
             }
         }else if (SIM==0){
-            A = Denda4;
+            Total[0] = Denda[4];
         }else {
             Source1.TidakValid();
             BagMenu();
-        }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();
-            BagMenu();
-        }
+        }BagMenu();
     }
     public static void BagSTNK(){
         Source1.Batas();
         Source1.PertanyaanSTNK();
         STNK = inputInt.nextInt();
         if(STNK==1){
-            B = 0;
+            Total[1] = Denda[0];
         }else if(STNK==0){
-            B = Denda2;
+            Total[1] = Denda[2];
         }else{
             Source1.TidakValid();
             BagMenu();
-        }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();
-            BagMenu();
-        }
+        }BagMenu();
     }
     public static void BagPlat(){
         Source1.Batas();
         Source1.PertanyaanPlatNomor();
         PlatNomor = inputInt.nextInt();
         if(PlatNomor==1){
-            C = 0;
+            Total[2] = Denda[0];
         }else if(PlatNomor==0){
-            C = Denda3;
+            Total[2] = Denda[3];
         }else{
             Source1.TidakValid();
             BagMenu();
-        }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();
-            BagMenu();
-        }
+        }BagMenu();
     }
     public static void BagPartMotor(){
         Source1.Batas();
         Source1.PertanyaanPartMotor();
         PartMotor = inputInt.nextInt();
         if(PartMotor==1){
-            D = 0;
+            Total[3] = Denda[0];
         }else if(STNK==0){
-            D = Denda2;
+            Total[3] = Denda[2];
         }else{
             Source1.TidakValid();
             BagMenu();
-        }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();
-            BagMenu();
-        }
+        }BagMenu();
     }
     public static void BagPartMobil(){
         Source1.Batas();
         Source1.PertanyaanPartMobil();
         PartMobil = inputInt.nextInt();
         if(PartMobil==1){
-            E = 0;
+            Total[4] = Denda[0];
         }else if(PartMobil==0){
-            E = Denda3;
+            Total[4] = Denda[3];
         }else{
             Source1.TidakValid();
             BagMenu();
-        }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();BagMenu();
-        }
+        }BagMenu();
     }
     public static void BagSerepMobil(){
         Source1.Batas();
         Source1.PertanyaanSerepMobil();
         SerepMobil = inputInt.nextInt();
         if(SerepMobil==1){
-            F = 0;
+            Total[5] = Denda[0];
         }else if(SerepMobil==0){
-            F = Denda2;
+            Total[5] = Denda[2];
         }else{
             Source1.TidakValid();BagMenu();
-        }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();BagMenu();
-        }
+        }BagMenu();
     }
     public static void BagHelm(){
         Source1.Batas();
         Source1.MenggunakanHelm();
         Helm = inputInt.nextInt();
         if(Helm==1){
-            G = 0;
+            Total[6] = Denda[0];
         }else if(Helm==0){
-            G = Denda2;
+            Total[6] = Denda[2];
         }else{
             Source1.TidakValid();BagMenu();
         }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();BagMenu();
-        }
+        BagMenu();
     }
     public static void BagLampuMalam(){
         Source1.Batas();
         Source1.LampuMalamHari();
         LampuMalam = inputInt.nextInt();
         if(LampuMalam==1){
-            H = 0;
+            Total[7] = Denda[0];
         }else if(LampuMalam==0){
-            H = Denda2;
+            Total[7] = Denda[2];
         }else{
-            Source1.TidakValid();BagMenu();
-        }Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
+            Source1.TidakValid();
             BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();BagMenu();
         }
+        BagMenu();
     }
     public static void BagLampuSiangMotor(){
         Source1.Batas();
         Source1.LampuMotorSiangHari();
         LampuMotorSiang = inputInt.nextInt();
         if(LampuMotorSiang==1){
-            I = 0;
+            Total[8] = Denda[0];
         }else if(LampuMotorSiang==0){
-            I = Denda1;
+            Total[8] = Denda[1];
         }else{
             Source1.TidakValid();BagMenu();
-        }
-        Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
-        }else{
-            Source1.TidakValid();BagMenu();
-        }
+        }BagMenu();
     }
     public static void BagRiting(){
         Source1.Batas();
         Source1.Riting();
         STNK = inputInt.nextInt();
         if(STNK==1){
-            J = 0;
+            Total[9] = Denda[0];
         }else if(STNK==0){
-            J = Denda2;
-        }else{
-            Source1.TidakValid();BagMenu();
-        }Source1.PilihanLain();
-        pilihan1 = inputInt.next().charAt(0);
-        if(pilihan1=='Y'){
-            BagMenu();
-        }else if(pilihan1=='N'){
-            BagTotal();
+            Total[9] = Denda[2];
         }else{
             Source1.TidakValid();BagMenu();
         }
+        BagMenu();
     }
     public static void BagTotal(){
         Source1.Batas();
-        Total = A + B + C + D + E + F + G + H + I + J + K + L;
+        int a = 0;
+        int sum = 0;
+        while(a < 10){
+            sum += Total[a];
+            a++;
+        }
         System.out.println("Nama anda : " +Nama);
         System.out.println("Nopol anda "+ Nopol);
         System.out.println("Kesalahan anda : \n");
-        if(A>0){
-            System.out.println("Tidak membawa SIM");
-        }if(B>0){
-            System.out.println("Tidak membawa STNK");
-        }if(C>0){
-            System.out.println("Tidak menggunakan plat nomor standar");
-        }if(D>0){
-            System.out.println("Tidak menggunakan aksesoris / spare part motor standar");
-        }if(E>0){
-            System.out.println("Tidak menggunakan aksesoris / spare part mobil standar");
-        }if(F>0){
-            System.out.println("Tidak membawa ban serep / segitiga pengaman");
-        }if(G>0){
-            System.out.println("Tidak menggunakan helm / tidak standar");
-        }if(H>0){
-            System.out.println("Tidak menyalakan lampu pada malam hari / cuaca buruk");
-        }if(I>0){
-            System.out.println("Tidak menyalakan lampu motor pada siang hari");
-        }if(J>0){
-            System.out.println("Tidak menyalakan lampu sein / riting saat berbelok");
+        if(Total[0]>0){
+            print("Tidak membawa SIM");
+        }if(Total[1]>0){
+            print("Tidak membawa STNK");
+        }if(Total[2]>0){
+            print("Tidak menggunakan plat nomor standar");
+        }if(Total[3]>0){
+            print("Tidak menggunakan aksesoris / spare part motor standar");
+        }if(Total[4]>0){
+            print("Tidak menggunakan aksesoris / spare part mobil standar");
+        }if(Total[5]>0){
+            print("Tidak membawa ban serep / segitiga pengaman");
+        }if(Total[6]>0){
+            print("Tidak menggunakan helm / tidak standar");
+        }if(Total[7]>0){
+            print("Tidak menyalakan lampu pada malam hari / cuaca buruk");
+        }if(Total[8]>0){
+            print("Tidak menyalakan lampu motor pada siang hari");
+        }if(Total[9]>0){
+            print("Tidak menyalakan lampu sein / riting saat berbelok");
         }
-        System.out.println("Denda anda sebesar "+Total);
-        System.out.println("\nanda bisa mendatangi polsek terdekat \nuntuk informasi lebih lanjut");
+        print("Denda anda sebesar "+sum);
+        print("\nanda bisa mendatangi polsek terdekat \nuntuk informasi lebih lanjut");
         Source1.Batas();
         
     }
+    
+    
 }
+    
