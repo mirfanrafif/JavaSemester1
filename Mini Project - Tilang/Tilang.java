@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Date;
 /*
     Data denda dalam program ini
     sudah sesuai dengan yang ada
@@ -27,6 +28,7 @@ public class Tilang {
     public static Scanner inputString = new Scanner(System.in);
     public static Scanner inputInt = new Scanner(System.in);
     public static Source Source1 = new Source();
+    public static Date date1 = new Date();
     
         
         
@@ -225,6 +227,7 @@ public class Tilang {
             sum += Total[a];
             a++;
         }
+        System.out.println(date1);
         System.out.println("Nama anda : " +Nama);
         System.out.println("Nopol anda "+ Nopol);
         System.out.println("Kesalahan anda : \n");
@@ -249,7 +252,7 @@ public class Tilang {
         }if(Total[9]>0){
             print("Tidak menyalakan lampu sein / riting saat berbelok");
         }
-        print("Denda anda sebesar "+sum);
+        print("\nDenda anda sebesar "+sum);
         print("\nanda bisa mendatangi polsek terdekat \nuntuk informasi lebih lanjut");
         Source1.Batas();
         
