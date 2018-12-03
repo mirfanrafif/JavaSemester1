@@ -1,6 +1,3 @@
-/**
- * Tilangv2
- */
 import java.util.Scanner;
 public class Tilangv2 {
 
@@ -8,13 +5,9 @@ public class Tilangv2 {
     public static int menu;
     public static int [] Denda = {0,100000,250000,500000,1000000};
     public static int [] Total = new int[10];
-        
     public static Scanner inputString = new Scanner(System.in);
     public static Scanner inputInt = new Scanner(System.in);
-    public static void println(String p){
-        System.out.println(p);
-    }
-
+    public static void println(String p){System.out.println(p);}
     public static String[] Kesalahan = {"Tidak membawa SIM", "Tidak membawa STNK", "Tidak menggunakan plat nomor standar", "Tidak menggunakan aksesoris / spare part motor standar", "Tidak menggunakan aksesoris / spare part mobil standar", "Tidak membawa ban serep / segitiga pengaman", "Tidak menggunakan helm / tidak standar", "Tidak menyalakan lampu pada malam hari / cuaca buruk", "Tidak menyalakan lampu motor pada siang hari", "Tidak menyalakan lampu sein / riting saat berbelok"};
 
     public static void main(String[] args) {
@@ -23,7 +16,6 @@ public class Tilangv2 {
         System.out.print("Masukkan Nopol Kendaraan : ");
         Nopol = inputString.nextLine();
         BagMenu();
-
     }
 
     public static void BagMenu(){
@@ -87,7 +79,6 @@ public class Tilangv2 {
         System.out.println("Apakah pengendara "+ Tilangv2.Kesalahan[Kesalahan]+ "?");
         System.out.println("Y / N");
         TanyaUlang = inputString.nextLine();
-
         if (TanyaUlang.equals("Y")||TanyaUlang.equals("y")) {
             Total[Kesalahan] = Tilangv2.Denda[Denda];
         } else if(TanyaUlang.equals("N")||TanyaUlang.equals("n")) {
@@ -95,24 +86,16 @@ public class Tilangv2 {
         }
         else{
             TidakValid();
-        }
-        BagMenu();
+        }BagMenu();
     }
 
     public static void TidakValid(){
         System.out.println("Input tidak valid, anda akan dibawa ke menu.");
     }
-
+    
     public static void BagTotal(){
-        System.out.println("\n--------------------------------------");
-
         int sum = 0;
-        for (int i = 0; i < Total.length; i++) {
-            if (Total[i]>0) {
-                sum += Total[i];
-            }
-        }
-
+        System.out.println("\n--------------------------------------");
         System.out.println("Nama anda : " +Nama);
         System.out.println("Nopol anda "+ Nopol);
         System.out.println("Kesalahan anda : \n");
@@ -122,7 +105,11 @@ public class Tilangv2 {
                 System.out.println(Kesalahan[i]);
             }
         }
-
+        for (int i = 0; i < Total.length; i++) {
+            if (Total[i]>0) {
+                sum += Total[i];
+            }
+        }
         System.out.println("Denda anda sebesar : "+ sum);
         System.out.println("\nanda bisa mendatangi polsek terdekat \nuntuk informasi lebih lanjut");
 
