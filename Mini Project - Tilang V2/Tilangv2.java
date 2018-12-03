@@ -99,12 +99,14 @@ public class Tilangv2 {
         System.out.println("Nama anda : " +Nama);
         System.out.println("Nopol anda "+ Nopol);
         System.out.println("Kesalahan anda : \n");
-
+        int count = 1;
         for (int i = 0; i < Total.length; i++) {
             if (Total[i]>0) {
-                System.out.println(Kesalahan[i]);
+                System.out.println(count+". "+ Kesalahan[i]);
+                count++;
             }
         }
+        
         for (int i = 0; i < Total.length; i++) {
             if (Total[i]>0) {
                 sum += Total[i];
