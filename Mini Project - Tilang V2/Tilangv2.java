@@ -3,8 +3,8 @@ public class Tilangv2 {
 
     public static String Nopol, Nama, print, TanyaUlang;
     public static int menu;
-    public static int [] Denda = {0,100000,250000,500000,1000000};
-    public static int [] Total = new int[10];
+    public static int [] DendaList = {0,100000,250000,500000,1000000};
+    public static int [] Denda = new int[10];
     public static Scanner inputString = new Scanner(System.in);
     public static Scanner inputInt = new Scanner(System.in);
     public static void println(String p){System.out.println(p);}
@@ -80,9 +80,9 @@ public class Tilangv2 {
         System.out.println("Y / N");
         TanyaUlang = inputString.nextLine();
         if (TanyaUlang.equals("Y")||TanyaUlang.equals("y")) {
-            Total[Kesalahan] = Tilangv2.Denda[Denda];
+            Tilangv2.Denda[Kesalahan] = Tilangv2.DendaList[Denda];
         } else if(TanyaUlang.equals("N")||TanyaUlang.equals("n")) {
-            Total[Kesalahan] = Tilangv2.Denda[0]; 
+            Tilangv2.Denda[Kesalahan] = Tilangv2.DendaList[0]; 
         }
         else{
             TidakValid();
@@ -94,25 +94,25 @@ public class Tilangv2 {
     }
     
     public static void BagTotal(){
-        int sum = 0;
+        int Total = 0;
         System.out.println("\n--------------------------------------");
         System.out.println("Nama anda : " +Nama);
         System.out.println("Nopol anda "+ Nopol);
         System.out.println("Kesalahan anda : \n");
         int count = 1;
-        for (int i = 0; i < Total.length; i++) {
-            if (Total[i]>0) {
-                System.out.println(count+". "+ Kesalahan[i]);
+        for (int i = 0; i < DendaList.length; i++) {
+            if (Denda[i]>0) {
+                System.out.println(count+". "+ Kesalahan[i] + " ("+Denda[i]+")");
                 count++;
             }
         }
         
-        for (int i = 0; i < Total.length; i++) {
-            if (Total[i]>0) {
-                sum += Total[i];
+        for (int i = 0; i < Denda.length; i++) {
+            if (Denda[i]>0) {
+                Total += Denda[i];
             }
         }
-        System.out.println("Denda anda sebesar : "+ sum);
+        System.out.println("Denda anda sebesar : Rp. "+ Total);
         System.out.println("\nanda bisa mendatangi polsek terdekat \nuntuk informasi lebih lanjut");
 
     }
