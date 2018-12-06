@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Tilangv2 {
 
-    public static String Nopol, Nama, print, TanyaUlang;
+    public static String Nopol, Nama, TanyaUlang;
     public static int menu;
     public static int [] DendaList = {0,100000,250000,500000,1000000};
     public static int [] Denda = new int[10];
