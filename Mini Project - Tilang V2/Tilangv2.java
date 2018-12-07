@@ -100,7 +100,7 @@ public class Tilangv2 {
         System.out.println("Nopol anda "+ Nopol);
         System.out.println("Kesalahan anda : \n");
         int count = 1;
-        for (int i = 0; i < DendaList.length; i++) {
+        for (int i = 0; i < Denda.length; i++) {
             if (Denda[i]>0) {
                 System.out.println(count+". "+ Kesalahan[i] + " ("+Denda[i]+")");
                 count++;
