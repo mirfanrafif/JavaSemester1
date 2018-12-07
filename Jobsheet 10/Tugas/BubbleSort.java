@@ -1,6 +1,3 @@
-/**
- * BubbleSort
- */
 public class BubbleSort {
     public static int[] arr = {16, 4, 10, 90, 27, 3, 12, 28};
     public static int n = arr.length;
