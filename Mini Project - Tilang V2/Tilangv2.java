@@ -11,6 +11,9 @@ public class Tilangv2 {
     public static String[] Kesalahan = {"Tidak membawa SIM", "Tidak membawa STNK", "Tidak menggunakan plat nomor standar", "Tidak menggunakan aksesoris / spare part motor standar", "Tidak menggunakan aksesoris / spare part mobil standar", "Tidak membawa ban serep / segitiga pengaman", "Tidak menggunakan helm / tidak standar", "Tidak menyalakan lampu pada malam hari / cuaca buruk", "Tidak menyalakan lampu motor pada siang hari", "Tidak menyalakan lampu sein / riting saat berbelok"};
 
     public static void main(String[] args) {
+        Awal();
+    }
+    public static void Awal(){
         System.out.print("Masukkan nama pengendara : ");
         Nama = inputString.nextLine();
         System.out.print("Masukkan Nopol Kendaraan : ");
@@ -20,18 +23,12 @@ public class Tilangv2 {
 
     public static void BagMenu(){
         System.out.println("\n\n--------------------------------");
-        System.out.println("Menu : ");
-        System.out.println("1. SIM");
-        System.out.println("2. STNK");
-        System.out.println("3. Plat Nomor");
-        System.out.println("4. Spare Part / Aksesoris Motor");
-        System.out.println("5. Spare Part / Aksesoris Mobil");
-        System.out.println("6. Ban Serep dan Segitiga Pengaman");
-        System.out.println("7. Helm untuk Pengendara Motor");
-        System.out.println("8. Lampu Kendaraan saat Malam Hari / Cuaca Buruk / Kabut");
-        System.out.println("9. Lampu motor saat siang hari");
-        System.out.println("10. Lampu sein / Riting saat berbelok");
-        System.out.println("11. Total Denda");
+        int count = 1;
+        for (int i = 0; i < Kesalahan.length; i++) {
+            System.out.println(count + ". "+ Kesalahan[i]);
+            count++;
+        }
+        System.out.println("11. Total");
         System.out.print("Pilih menu : ");
         menu = inputInt.nextInt();
         switch(menu){
@@ -70,7 +67,7 @@ public class Tilangv2 {
                 break;
             default:
             TidakValid();
-                BagMenu();
+            BagMenu();
         }
     }
 
@@ -114,6 +111,15 @@ public class Tilangv2 {
         }
         System.out.println("Denda anda sebesar : Rp. "+ Total);
         System.out.println("\nanda bisa mendatangi polsek terdekat \nuntuk informasi lebih lanjut");
+
+        System.out.println("apakah anda ingin keluar dari program?");
+        System.out.println("Y/N");
+        String ulang = inputString.nextLine();
+        if (ulang.equals("Y")||ulang.equals("y")) {
+            Awal();
+        } else {
+            System.out.println("Terima kasih. Tetap aman dalam berkendara");
+        }
 
     }
 }
