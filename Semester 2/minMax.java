@@ -1,11 +1,8 @@
 public class minMax {
     public int nilaiArray, min, max;
-    
-    public int MaxMinBF(int n){
-        return n;
-    }
-    
-    public static void max_min(int[] arr, int indeksAwal, int indeksAkhir, 
+   
+    public static void max_min(int[] arr, int indeksAwal, 
+            int indeksAkhir, 
             maxMin hasil){
         int indeksTengah;
         maxMin hasil1 = new maxMin();
