@@ -1,0 +1,6 @@
+1. sekumpulan elemen/data dimana proses memasukkan/menambah elemen/data dilakukan pada posisi belakang (rear) dan proses mengeluarkan/mengambil elemen/data dilakukan pada elemen/data di posisi depan (front) atau dalam bahasa indonesia bisa disebut dengan antrian.
+2. digunakan untuk menyimpan data queue (antrian) dalam bentuk array
+3. max = digunakan untuk menentukan panjang array
+size = digunakan sebagai syarat pada desisi (berpasangan dengan panjang array)
+front = digunakan sebagai syarat pada desisi (berpasanagan dengan nilai dan indeks awal array)
+rear = digunakan sebagai syarat pada desisi (berpasanagan dengan nilai dan indeks ahir array)
